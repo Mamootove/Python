@@ -16,4 +16,9 @@ while b:
         elif replay=="n" or replay== "N":
             b = False
     else:
-        print(f"The number was {a}, but try again later")
+        print(f"the numbaer was {a}, try again")
+        replay= input("do you wanna play again?(y,n): ")
+        if replay=="y" or replay== "Y":
+            b = True
+        elif replay=="n" or replay== "N":
+            b = False

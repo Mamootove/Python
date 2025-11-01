@@ -1,0 +1,1 @@
+print("mahan" * 5)

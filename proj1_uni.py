@@ -9,6 +9,7 @@ tot = ln + ls
 print(f"{name} has {ln} characters!", end="***")
 print(f"{sur} has {ls} characters!")
 print(f"the total characters are {tot}")
+
 print("________________________________________")
 
 hour = int(input("How many hours do you work a day? "))

@@ -37,16 +37,15 @@ def rate_hour():
     except:
         print("There is an issue with the hour input")
         a = False
+        rate_hour()
     try:
         rate = int(rate)
     except:
         print("There is an issue with the rate input")
         b = False
+        rate_hour()
     if a and b ==True:
         print(f"you earn {hour * rate} daily")
-    else:
-        print("OY stupid!!")
-    
 
 khoshgelesh_kon(*len_name(*take_name()))
 print("___________________________________")

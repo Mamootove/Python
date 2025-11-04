@@ -1,3 +1,4 @@
+#Functions are here!!!
 def take_name():
     '''
     Get user name and  surname, Then retuns them.

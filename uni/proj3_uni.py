@@ -4,11 +4,82 @@ def girande_derakht():
     (function)
     get the tree's inputes.
     '''
+    tree_list =[] 
     print("Do you want to draw your own tree??\nHere you can draw one without doing anything!!\nYour tree has 4 parts, fill the parts and get the tree you wanted!")
-    tool_s = int(input("Enter the tool of shakhe: "))
-    ertefa_s = int(input("Enter the ertefa of shakhe: "))
-    tool_d = int(input("Enter the tool of derakht: "))
-    ertefa_d = int(input("Enter the ertefa of derakht: "))
+    tool_s = (input("Enter the tool of shakhe: "))
+    ertefa_s = (input("Enter the ertefa of shakhe: "))
+    tool_d = (input("Enter the tool of derakht: "))
+    ertefa_d = (input("Enter the ertefa of derakht: "))
+    tree_list.append(tool_s)
+    tree_list.append(tool_d)
+    tree_list.append(ertefa_d)
+    tree_list.append(ertefa_s)
+
+    print(f"tree list is {tree_list}")
+    
+    tree_dict = {}
+    tree_dict["tool_d"] = tool_d
+    tree_dict["tool_s"] = tool_s
+    tree_dict["ertefa_d"] = ertefa_d
+    tree_dict["ertefa_s"] = ertefa_s
+    
+    print(f"tree dict is {tree_dict}")
+    
+    def regirande_derakht():
+        tool_s = (input("reEnter the tool of shakhe: "))
+        ertefa_s = (input("reEnter the ertefa of shakhe: "))
+        tool_d = (input("reEnter the tool of derakht: "))
+        ertefa_d = (input("reEnter the ertefa of derakht: "))
+        a= True
+        b=True
+        c=True
+        d=True
+        try:
+            tool_s = int(tool_s)
+        except:
+            a =False
+        try:
+            ertefa_s = int(ertefa_s)
+        except:
+            b = False
+        try:
+            tool_d = int(tool_d)
+        except:
+            c= False
+        try:
+            ertefa_d = int(ertefa_d)
+        except:
+            d = False
+        if a and b and c and d != True:
+            regirande_derakht()
+        return tool_s, ertefa_s, tool_d, ertefa_d
+
+    a= True
+    b=True
+    c=True
+    d=True
+    try:
+        tool_s = int(tool_s)
+    except:
+        a =False
+    try:
+        ertefa_s = int(ertefa_s)
+    except:
+        b = False
+    try:
+        tool_d = int(tool_d)
+    except:
+        c= False
+    try:
+        ertefa_d = int(ertefa_d)
+    except:
+        d = False
+    if a and b and c and d != True:
+        regirande_derakht()
+
+
+
+
     return tool_d, ertefa_d, tool_s, ertefa_s
 
 def girande_goldon():
@@ -88,6 +159,7 @@ def hame_kare(td, ertefa_d, ertefa_s, tg, eg, real_name, len_name, real_ertefa_s
 
     for m in range(int((eg - 1)/2)):
         print(" " *(real_ertefa_shakhe - int((tg-1)/2)) + "#" *(tg))
+
 
 
 #mokhtasar o mofid, bedon inke barnamamono kasif konim hamaro toye ye khat

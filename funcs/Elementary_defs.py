@@ -60,3 +60,10 @@ def skyline(*args):
     print(tallest)
 skyline(1,1,1,1,1,0)
 
+lambda x: True
+'''
+we use lambda for  making small func. also they are easiear to use
+'''
+map()#do function on a list way easier than a func.
+filter()#do a if on a list 
+#both of them need to be listed(list()).

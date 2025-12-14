@@ -60,4 +60,5 @@ def restock_item(item, amount, items):
 items = {"apple": {"amount": 30, "price" : 10}} #we only have apple
 print(sell_items("apple", 10, items))
 restock_item("banana", 20, items)
-print(items)    
+print(items)  
+  

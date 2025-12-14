@@ -1,4 +1,3 @@
-import subprocess
 def girande():
     num = int(input("Enter your number:\n"))
     argham = str(num)

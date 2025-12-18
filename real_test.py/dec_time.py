@@ -6,5 +6,5 @@ def timer(f):
         f(*a)
         then = datetime.datetime.now()
         df = then - now 
-        print(df.microseconds)
+        print(df)
     return wrraper

@@ -1,14 +1,6 @@
 #funcs 1:
 def is_palindrome(word):
-    '''
-    checks if حسن کچل یا کچل حسن
-    >>>is_palindrome("level")
-    True
-    >>>is_palindrome("Mahan")
-    False
-    '''
-    return word == word[::-1]  #[::-1]، استرینگ را برعکس میکند
-    
+    return word == word[::-1]  #[::-1]، reverses the string    
 def count_palindromes(words):
     """
     Gets a list, count the palindromes.
@@ -29,8 +21,10 @@ def longest_word(words):
     return longest
 
 words = ["level", "apple", "radar", "banana", "civic", "python"]
-print(count_palindromes(words))
-print(longest_word(words))
+print()
+print(f"There are -{count_palindromes(words)}- palindrome words")
+print(f"the longest word is -{longest_word(words)}-")
+print()
 
 
 
@@ -46,7 +40,7 @@ def sell_items(item, amount, items):   #items is a dict that will define by user
     else:
         total_price = amount* mojodi["price"]
         mojodi["amount"] -= amount   #updates amount
-        return(total_price, "done")
+        return f"total price of {item} is -{total_price}- soled"
     
 def restock_item(item, amount, items):
     mojodi = items.get(item, "nadarim")
@@ -55,9 +49,11 @@ def restock_item(item, amount, items):
         items[item] = {"amount" : amount, "price": 0.0}
     else:
         mojodi["amount"] += amount  
-    print("confirmed")
+    print(f"{item} add\nconfirmed")
     
 items = {"apple": {"amount": 30, "price" : 10}} #we only have apple
+print("Questoin 2")
+print()
 print(sell_items("apple", 10, items))
 restock_item("banana", 20, items)
 print(items)  

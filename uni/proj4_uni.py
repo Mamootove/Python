@@ -24,14 +24,15 @@ class Library:
     
     def menu(self): #Main Function.
         flag = 666 #Its just a random number, in case to start the while I just needed something as starter.
-        prmpt = "\nWhat do you wanna do?\n(1.add a book)\n(2.see all books)\n(3.see unborrowed books)\n(4.borrow a book)\n(5.return a book)\n(6.see borrowed books)\n(0.leave): "
+        Menu = "\nWhat do you wanna do?\n(1.add a book)\n(2.see all books)\n(3.see unborrowed books)\n(4.borrow a book)\n(5.return a book)\n(6.see borrowed books)\n(0.leave): "
         while flag != 0:
-            flag = (input(prmpt))
+            flag = (input(Menu))
             try:
                 flag = int(flag)
             except:
                 print("You entered a wrong thing, please try only numbers!")
                 self.menu()
+                break
             if flag ==666:
                 pass
             elif flag == 1:
@@ -47,12 +48,10 @@ class Library:
             elif flag == 6:
                 self.show_borrowed_books()
             elif flag == 0:
-                break
+                print("Thanks for using our library!")
             else:
                 print("Seems you Entered wrong number!")
                 self.menu()
-
-        print("Thanks for using our library!")
 
 
     def add_book(self): #Does same thing as Hand_add but it's kind of automatic.
@@ -67,7 +66,7 @@ class Library:
         print()
 
     def show_books(self):
-        if len(self.books) == 0:
+        if len(self.books) == 0: #Checks the number of books
             print("We dont have anything to show you!")
         else:
             print("All books:")
@@ -77,7 +76,7 @@ class Library:
         print()
 
     def show_unborrowed_books(self):
-        if len(self.books) == 0: #Checks the number of books.
+        if len(self.borrowed_books) == len(self.books): #A little bit weird but If we borrow all our books the number of both lists(books and borrowed_books) will be equal so its some how make sense 
             print("Its weird but we dont have any books :(")
         else:
             print("Available books: ")
@@ -88,7 +87,7 @@ class Library:
         print()        
 
     def show_borrowed_books(self):
-        if len(self.books) == 0:
+        if len(self.borrowed_books) == 0:
             print("We did not borrowed anything yet!")
         else:
             print("Unavailable books: ")
@@ -114,7 +113,6 @@ class Book(Library):
                 return None 
         print(f"We dont have {name}")
     
-    
     def return_borrow(self):
         name = input("Please Enter the name of the book: ")
         for book in self.borrowed_books:
@@ -122,14 +120,14 @@ class Book(Library):
                 book["Available"] = True
                 self.borrowed_books.remove(book)
                 print(f"Done\n{name} has returned to library.")
-            else:
-                print(f"It seems we didnt borrowed you the `{name}`")
-                print("If you think there is an issue, Please report it to manager!") 
+                return None
+        print(f"It seems we didnt borrowed you the `{name}`")
+        print("If you think there is an issue, Please report it to manager!") 
 
 
 #These are only for testing!
 # Library().Hand_adding("slavery", "Nigga", 1898)
 # Library().Hand_adding("How to become rich", "White", 2020)
-# Library().menu()
+Library().menu()
 
 
